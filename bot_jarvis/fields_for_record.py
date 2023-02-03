@@ -1,9 +1,16 @@
+from abc import ABC, abstractmethod
 from datetime import datetime
 from termcolor import colored
 import re
 
 
-class Field:
+class Abstract_field(ABC):
+
+    @abstractmethod
+    def value(self, data):
+        pass
+
+class Field(Abstract_field):
     def __init__(self, value):
         self._value = None
         self.value = value
